@@ -95,6 +95,6 @@ else:
         print("Just dont")
         print("Its annoying")
         print("PLEASE STOP")
-        print("NOOOOOOOOOOOOOOOOOOOO")
         print("IM WARNING YOU")
+        print("NOOOOOOOOOOOOOOOOOOOO")
         print("<dies>")
