@@ -23,8 +23,8 @@ for letter in range(1, amount_of_letters + 1):
 
 random.shuffle(password)
 
-password2 = ("")
+password_string = ("")
 for character in password:
-    password2 += character
+    password_string += character
 
-print(f"Your password is: {password2}")
+print(f"Your password is: {password_string}")
