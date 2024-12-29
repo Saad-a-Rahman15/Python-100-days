@@ -1,4 +1,4 @@
-question =input("Choose a number! \n")
+question = input("Choose a number to see its factors! \n")
 
 question = int(question)
 
