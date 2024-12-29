@@ -3,7 +3,7 @@ letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 symbols = ['!', '"', '#', '$', '%', '£', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '}', '|', '~']
 
-print("Welcome to PyPassword Generator!")
+print("Welcome to Saadiboy Password Generator!")
 amount_of_characters = int(input("How many characters would you like in your password? \n"))
 amount_of_symbols = int(input("How many symbols would you like in your password? \n"))
 amount_of_numbers = int(input("How many numbers would you like in your password? \n"))
