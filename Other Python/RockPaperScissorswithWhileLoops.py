@@ -44,5 +44,5 @@ gameduel = '   '
 
 while gameduel != 'x':
      gameduel = input("Press 'r' to play , and 'x' to exit the duel \n")
-     if gameduel == 'r':
+     if gameduel == "r":
           rock_paper_scissors()
