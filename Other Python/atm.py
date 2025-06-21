@@ -1,5 +1,5 @@
 print("This ATM has been placed here by the Mars government. Don't mess around.")
-print("If you want to access it, the PIN is 1546.")
+print("If you want to access it, the Pin is 1546.")
 print("           ")
 print("           ")  
 account = 500
