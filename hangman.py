@@ -1,22 +1,33 @@
 import random
 
-print("Welcome to Hangman!")
-print("To win, you must guess all the letters to free our friend Hank, or he will be hanged!")
-print("You have 8 tries.")
+word_list = ['saad', 'door', 'hide']
 
-word_list = ["python", "coding", "javascript"]
-
-chosen_word =  random.choice(word_list)
-
+chosen_word = random.choice(word_list)
 print(chosen_word)
 
-for attempts in chosen_word:
+placeholder = ''
+for position in range(0, len(chosen_word)):
+    placeholder += '_'
+print(placeholder)
+
+game_over = False
+
+correct_letters = []
+
+while not game_over:
+
+    guessed_word = ''
+
     guess = input("Guess a letter: \n")
-    guess = guess.lower()
+
     for letter in chosen_word:
-        position = chosen_word.find(guess)
-     
         if letter == guess:
-            print("Right")
+            guessed_word += letter
+            correct_letters.append(letter)
+        elif letter in correct_letters:
+            guessed_word += letter
         else:
-            print("Wrong")
+            guessed_word += '_'
+
+
+    print(guessed_word)
