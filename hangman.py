@@ -93,7 +93,7 @@ word_list = [
     "head", "eye", "ear", "nose", "mouth", "hand", "arm", "leg", "foot", "knee",
     "toe", "finger", "elbow", "shoulder", "chest", "back", "stomach", "neck", "hip", "wrist",
     "school", "hospital", "library", "office", "store", "market", "museum", "park", "zoo", "restaurant",
-    "hotel", "airport", "station", "church", "temple", "mall", "stadium", "theater", "gym", "pool"]
+    "hotel", "airport", "station", "church", "temple", "mall", "stadium", "theater", "gym", "pool", "mosque"]
 
 chosen_word = random.choice(word_list)
 
@@ -111,7 +111,7 @@ lives = 6
 guessed_letters = list()
 
 while not game_over:
-    print(f"*************************************** {lives}/5 LIVES LEFT ************************************************")
+    print(f"*************************************** {lives}/6 LIVES LEFT ************************************************")
 
     guessed_word = ''
 
