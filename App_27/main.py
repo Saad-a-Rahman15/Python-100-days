@@ -1,29 +1,30 @@
 from tkinter import *
 
+def calculate():
+    miles = float(miles_entry.get())
+    km = miles * 1.609
+    km_convert.config(text=f"{km}")
+
 window = Tk()
-window.title("GUI Program")
-window.minsize(500, 300)
+window.title("Miles to Km Converter")
+window.config(padx=20, pady=20)
 
-label = Label(text="Hi!", font=("Minecraft", 100))
-label.pack(expand=True)
+miles_entry = Entry(width=7)
+miles_entry.grid(column=1, row=0)
 
-def button_clicked():
-    label.config(text="Ouch! STOP CLICKING!", fg="red")
+miles_label = Label(text="Miles")
+miles_label.grid(column=2, row=0)
 
-def button_clicked_2():
-    label.config(text="Thank you!", fg="green")
+equal_label = Label(text="is equal to")
+equal_label.grid(column=0, row=1)
 
-def button_clicked_3():
-    label.config(text="Hi!", fg="black")
+km_convert = Label(text="0")
+km_convert.grid(column=1, row=1)
 
-button = Button(text="Attack the Button!", font=("Minecraft", 20), command=button_clicked)
-button.pack(expand=True)
+km_label = Label(text="Km")
+km_label.grid(column=2, row=1)
 
-save = Button(text="Save the Button!", font=("Minecraft", 20), command=button_clicked_2)
-save.pack(expand=True)
-
-reset = Button(text="Reset", font=("Minecraft", 20), command=button_clicked_3)
-reset.pack(expand=True)
-
+calculate_button = Button(text="Calculate", command=calculate)
+calculate_button.grid(column=1, row=2)
 
 window.mainloop()
