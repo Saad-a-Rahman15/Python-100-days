@@ -1,19 +1,43 @@
 from tkinter import *
 from tkinter import messagebox
+from random import choice, randint, shuffle
+import json
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+def password_generator():
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
+    password_letters = [choice(letters) for _ in range(randint(8, 10))]
+    password_symbols = [choice(symbols) for _ in range(randint(2, 4))]
+    password_numbers = [choice(numbers) for _ in range(randint(2, 4))]
+
+    password_list = password_letters + password_symbols + password_numbers
+    shuffle(password_list)
+
+    password = "".join(password_list)
+    password_entry.insert(0, password)
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 def save():
 
     website = website_entry.get()
     email = email_entry.get()
     password = password_entry.get()
+    new_data = {
+        website: {
+            "email": email,
+            "password": password,
+        }
+    }
 
-    messagebox.askyesnocancel(title=f"{website}", message="Are you sure you want to proceed?")
-
-    with open("password.txt", "w") as data_file:
-        data_file.write(f"{website} | {email} | {password}")
+    if len(website) == 0 or len(password) == 0:
+        messagebox.showinfo(title="Oops", message="Please make sure you haven't left any fields empty")
+    else:
+        with open("password.json", "w") as data_file:
+            json.dump(new_data, data_file)
+            website_entry.delete(0, "end")
+            password_entry.delete(0, "end")
 
 
 # ---------------------------- UI SETUP ------------------------------- #
@@ -44,8 +68,8 @@ password_entry = Entry(width=21, bg="white")
 password_entry.grid(column=1, row=3, sticky="w")
 
 #Buttons
-generate_password = Button(text="Generate Password",width=14, bg="white")
-generate_password.grid(column=2, row=3, sticky="e")
+generate_password = Button(text="Generate Password",width=14, bg="white", command=password_generator)
+generate_password.grid(column=2, row=3, sticky="w")
 add_password = Button(text="Add Password", width=36, bg="white", command=save)
 add_password.grid(column=1, columnspan=2, row=4, sticky="w")
 
