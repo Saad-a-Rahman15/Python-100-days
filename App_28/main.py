@@ -1,6 +1,6 @@
 from tkinter import *
 import math
-# ---------------------------- CONSTANTS ------------------------------- #
+# ---------------------------- CONSTANTS -------------------------------- #
 RED = "#BF1A1A"
 ORANGE = "#FF6C0C"
 BEIGE = "#FFE08F"
@@ -56,7 +56,7 @@ title_label.grid(column=1, row=0)
 canvas = Canvas(width=200, height=224, bg=BEIGE, highlightthickness=0)
 pomodoro_image = PhotoImage(file="tomato.png")
 canvas.create_image(100, 112, image=pomodoro_image)
-timer_text = canvas.create_text(100, 130, text="00:00", fill="grey15", font=("Minecraft", 40))
+timer_text = canvas.create_text(100, 130, text="00:00", fill="grey16", font=("Minecraft", 40))
 canvas.grid(column=1, row=1)
 
 
